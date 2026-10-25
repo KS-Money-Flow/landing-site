@@ -257,26 +257,16 @@ export default function AboutPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid var(--border-subtle)' }}>
             {principles.map((p) => (
-              <div
-                key={p.num}
-                style={{
-                  borderBottom: '1px solid var(--border-subtle)',
-                  padding: '28px 0',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(12, 1fr)',
-                  gap: '24px',
-                  alignItems: 'baseline'
-                }}
-              >
-                <div style={{ gridColumn: 'span 1', fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', fontFamily: 'var(--font-mono)' }}>
+              <div key={p.num} className="principles-grid">
+                <div className="principles-col-num">
                   {p.num}
                 </div>
-                <div style={{ gridColumn: 'span 3' }}>
+                <div className="principles-col-title">
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-primary)' }}>
                     {p.title}
                   </h3>
                 </div>
-                <div style={{ gridColumn: 'span 8' }}>
+                <div className="principles-col-desc">
                   <p style={{ fontSize: '0.98rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '8px' }}>
                     {p.desc}
                   </p>
@@ -294,10 +284,8 @@ export default function AboutPage() {
       <section style={{ padding: '48px 0 16px 0', borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-main)' }}>
         <div className="container">
           <div
+            className="grid-12"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '36px',
               alignItems: 'center'
             }}
           >
