@@ -14,16 +14,9 @@ export default function Footer() {
     >
       <div className="container">
         {/* 4 Columns */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
-            gap: '36px',
-            marginBottom: '40px'
-          }}
-        >
+        <div className="footer-grid">
           {/* Brand Column */}
-          <div style={{ maxWidth: '320px' }}>
+          <div className="footer-brand-col" style={{ maxWidth: '320px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <div
                 style={{
@@ -80,8 +73,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product Column */}
-          <div>
+          {/* Product Column (50% on mobile) */}
+          <div className="footer-nav-col">
             <h4 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted, #84948D)', marginBottom: '16px' }}>
               Product
             </h4>
@@ -104,8 +97,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Explore Column */}
-          <div>
+          {/* Explore Column (50% on mobile) */}
+          <div className="footer-nav-col">
             <h4 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted, #84948D)', marginBottom: '16px' }}>
               Explore
             </h4>
@@ -129,7 +122,7 @@ export default function Footer() {
           </div>
 
           {/* Support & Legal Column */}
-          <div>
+          <div className="footer-legal-col">
             <h4 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted, #84948D)', marginBottom: '16px' }}>
               Support &amp; Legal
             </h4>
@@ -177,6 +170,43 @@ export default function Footer() {
       </div>
 
       <style jsx>{`
+        :global(.footer-grid) {
+          display: grid;
+          grid-template-columns: 1.8fr 1fr 1fr 1fr;
+          gap: 36px;
+          margin-bottom: 40px;
+        }
+        @media (max-width: 900px) {
+          :global(.footer-grid) {
+            grid-template-columns: 1fr 1fr;
+            gap: 32px 24px;
+          }
+          :global(.footer-brand-col) {
+            grid-column: span 2;
+            max-width: 100% !important;
+          }
+          :global(.footer-nav-col) {
+            grid-column: span 1;
+          }
+          :global(.footer-legal-col) {
+            grid-column: span 2;
+          }
+        }
+        @media (max-width: 600px) {
+          :global(.footer-grid) {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 28px 16px !important;
+          }
+          :global(.footer-brand-col) {
+            grid-column: span 2 !important;
+          }
+          :global(.footer-nav-col) {
+            grid-column: span 1 !important; /* 50% 50% side-by-side on mobile */
+          }
+          :global(.footer-legal-col) {
+            grid-column: span 2 !important;
+          }
+        }
         :global(.footer-nav-link) {
           transition: all 0.2s ease;
           display: inline-block;
