@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: 'Download Money Flow — Android APK v2.4 & Google Play',
     description: 'Download Money Flow on Google Play or direct Android APK v2.4. 100% free Community edition with offline ledger, carry-forward, and zero ads.',
-    url: 'https://moneyflow.app/download',
+    url: '/download',
     images: [
       {
         url: '/assets/download-hero.png',

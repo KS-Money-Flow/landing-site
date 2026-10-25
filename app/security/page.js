@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: 'Security & Privacy Architecture — Money Flow',
     description: 'No bank credential collection, offline-first local storage, and zero third-party ad tracking. Learn how Money Flow protects your financial data privacy.',
-    url: 'https://moneyflow.app/security',
+    url: '/security',
     images: [
       {
         url: '/assets/download-hero.png',

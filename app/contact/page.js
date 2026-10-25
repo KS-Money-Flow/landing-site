@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'Contact & Support — Money Flow',
     description: 'Have a setup question, bug report, or feature request? Contact the Money Flow team. Response within 24-48 hours with privacy-first support.',
-    url: 'https://moneyflow.app/contact',
+    url: '/contact',
     images: [
       {
         url: '/assets/download-hero.png',

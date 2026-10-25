@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'About Money Flow — Origin Story, Timeline & Principles',
     description: 'The story behind Money Flow: born from messy career transitions and a belief that personal finance tools should provide clarity without judgment or data monetization.',
-    url: 'https://moneyflow.app/about',
+    url: '/about',
     images: [
       {
         url: '/assets/download-hero.png',

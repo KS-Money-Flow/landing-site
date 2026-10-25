@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: 'Privacy Policy — Money Flow',
     description: 'Read how Money Flow handles information for personal finance ledgers, spending reflection, and optional connected services.',
-    url: 'https://moneyflow.app/privacy',
+    url: '/privacy',
     images: [
       {
         url: '/assets/download-hero.png',

@@ -1,4 +1,7 @@
+import { getSiteUrl } from '../lib/siteConfig';
+
 export default function robots() {
+  const siteUrl = getSiteUrl();
   return {
     rules: [
       {
@@ -6,7 +9,7 @@ export default function robots() {
         allow: '/',
       },
     ],
-    sitemap: 'https://moneyflow.app/sitemap.xml',
-    host: 'https://moneyflow.app',
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }

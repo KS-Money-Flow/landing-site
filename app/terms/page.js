@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: 'Terms of Service — Money Flow',
     description: 'Review the terms and conditions for using the Money Flow Community app and planned Pro features. Clear boundaries, user ownership, and service guidelines.',
-    url: 'https://moneyflow.app/terms',
+    url: '/terms',
     images: [
       {
         url: '/assets/download-hero.png',

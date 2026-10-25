@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'Money Flow Features — Career Ledgers, Sentiment & Reconciliation',
     description: 'Automatic career carry-forward, Good vs Bad spending sentiment, cash & pending-bank reconciliation, and multi-format exports (PDF, JSON, Excel).',
-    url: 'https://moneyflow.app/features',
+    url: '/features',
     images: [
       {
         url: '/assets/download-hero.png',

@@ -9,6 +9,9 @@ import ComparisonMatrix from '../components/v2/ComparisonMatrix';
 import TrustSecuritySection from '../components/v2/TrustSecuritySection';
 import FaqAccordion from '../components/FaqAccordion';
 import FinalCtaBanner from '../components/v2/FinalCtaBanner';
+import { getSiteUrl } from '../lib/siteConfig';
+
+const siteUrl = getSiteUrl();
 
 export const metadata = {
   title: 'Money Flow — Personal Ledger & Career Wealth Tracker',
@@ -19,7 +22,7 @@ export const metadata = {
   openGraph: {
     title: 'Money Flow — Personal Ledger & Career Wealth Tracker',
     description: 'One clear ledger for every career, every rupee, and the way spending makes you feel. Automated carry-forward, sentiment tagging, and offline privacy.',
-    url: 'https://moneyflow.app',
+    url: siteUrl,
     images: [
       {
         url: '/assets/download-hero.png',
@@ -27,7 +30,19 @@ export const metadata = {
         height: 500,
         alt: 'Money Flow Personal Ledger App',
       },
+      {
+        url: '/assets/brand-logo.png',
+        width: 1024,
+        height: 1024,
+        alt: 'Money Flow Logo',
+      },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Money Flow — Personal Ledger & Career Wealth Tracker',
+    description: 'One clear ledger for every career, every rupee, and the way spending makes you feel. Automated carry-forward, sentiment tagging, and offline privacy.',
+    images: ['/assets/download-hero.png'],
   },
 };
 
@@ -46,8 +61,8 @@ export default function HomePage() {
           priceCurrency: 'INR',
         },
         description: 'A personal finance ledger for a life that moves. Offline-first, carry-forward career balance, spending sentiment reflection, and cash reconciliation.',
-        downloadUrl: 'https://moneyflow.app/download',
-        image: 'https://moneyflow.app/logo.png',
+        downloadUrl: `${siteUrl}/download`,
+        image: `${siteUrl}/logo.png`,
         softwareVersion: 'v2.4',
       },
       {

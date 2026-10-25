@@ -1,9 +1,12 @@
 import './globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { getSiteUrl } from '../lib/siteConfig';
+
+const siteUrl = getSiteUrl();
 
 export const metadata = {
-  metadataBase: new URL('https://moneyflow.app'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Money Flow — Personal Ledger & Career Wealth Tracker',
     template: '%s | Money Flow',
@@ -34,7 +37,7 @@ export const metadata = {
   openGraph: {
     title: 'Money Flow — Personal Ledger & Career Wealth Tracker',
     description: 'One clear ledger for every career, every rupee, and the way spending makes you feel. Automated carry-forward, sentiment tagging, and offline privacy.',
-    url: 'https://moneyflow.app',
+    url: siteUrl,
     siteName: 'Money Flow',
     images: [
       {
@@ -88,12 +91,12 @@ export default function RootLayout({ children }) {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://moneyflow.app/#organization',
+        '@id': `${siteUrl}/#organization`,
         name: 'Money Flow',
-        url: 'https://moneyflow.app',
+        url: siteUrl,
         logo: {
           '@type': 'ImageObject',
-          url: 'https://moneyflow.app/logo.png',
+          url: `${siteUrl}/logo.png`,
           width: 512,
           height: 512
         },
@@ -103,12 +106,12 @@ export default function RootLayout({ children }) {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://moneyflow.app/#website',
-        url: 'https://moneyflow.app',
+        '@id': `${siteUrl}/#website`,
+        url: siteUrl,
         name: 'Money Flow',
         description: 'Personal Ledger & Career Wealth Tracker for Android.',
         publisher: {
-          '@id': 'https://moneyflow.app/#organization'
+          '@id': `${siteUrl}/#organization`
         }
       }
     ]

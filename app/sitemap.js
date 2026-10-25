@@ -1,5 +1,7 @@
+import { getSiteUrl } from '../lib/siteConfig';
+
 export default function sitemap() {
-  const baseUrl = 'https://moneyflow.app';
+  const baseUrl = getSiteUrl();
   const lastModified = new Date();
 
   return [

@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: 'Money Flow Pricing — 100% Free Community & Pro Lifetime Waitlist',
     description: 'The core Money Flow Community ledger is ₹0, free forever: unlimited entries, career carry-forward, and zero ads. Join the waitlist for planned Pro Lifetime cloud extras.',
-    url: 'https://moneyflow.app/pricing',
+    url: '/pricing',
     images: [
       {
         url: '/assets/download-hero.png',
