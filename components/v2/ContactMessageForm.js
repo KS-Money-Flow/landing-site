@@ -61,7 +61,7 @@ export default function ContactMessageForm() {
 
   return (
     <div
-      className="interactive-card contact-col-7"
+      className="interactive-card contact-col-7 contact-form-card"
       style={{
         gridColumn: 'span 7',
         background: 'var(--surface)',

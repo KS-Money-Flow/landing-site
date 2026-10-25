@@ -20,9 +20,8 @@ export default function BentoGrid() {
 
         {/* Bento Grid */}
         <div
+          className="grid-12"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '24px'
           }}
         >

@@ -62,8 +62,8 @@ export default function DownloadPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '48px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+              gap: '40px',
               alignItems: 'center'
             }}
           >
@@ -149,7 +149,7 @@ export default function DownloadPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
               gap: '24px',
               marginBottom: '20px'
             }}
@@ -307,10 +307,8 @@ export default function DownloadPage() {
       <section style={{ padding: '64px 0', borderTop: '1px solid var(--border-subtle)', background: 'var(--surface-subtle)' }}>
         <div className="container">
           <div
+            className="grid-12"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '36px',
               alignItems: 'start'
             }}
           >
@@ -409,7 +407,7 @@ export default function DownloadPage() {
               borderRadius: '20px',
               padding: '36px 32px',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
               gap: '32px',
               alignItems: 'center'
             }}
@@ -527,7 +525,7 @@ export default function DownloadPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
               gap: '24px',
               marginBottom: '44px'
             }}

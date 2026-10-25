@@ -62,10 +62,8 @@ export default function ContactPage() {
       <section style={{ marginBottom: '96px' }}>
         <div className="container">
           <div
+            className="grid-12"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '32px',
               alignItems: 'start'
             }}
           >
@@ -168,7 +166,7 @@ export default function ContactPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
               gap: '36px',
               alignItems: 'start'
             }}
@@ -243,7 +241,7 @@ export default function ContactPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
               gap: '20px'
             }}
           >

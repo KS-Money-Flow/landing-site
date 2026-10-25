@@ -79,7 +79,7 @@ export default function PricingPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '32px',
               alignItems: 'stretch',
               marginBottom: '20px'
@@ -87,7 +87,7 @@ export default function PricingPage() {
           >
             {/* Tier 1: Community */}
             <div
-              className="interactive-card"
+              className="interactive-card pricing-tier-card"
               style={{
                 background: 'var(--surface)',
                 border: '1px solid var(--border-subtle)',
@@ -149,7 +149,7 @@ export default function PricingPage() {
 
             {/* Tier 2: Pro Lifetime (Lavender) */}
             <div
-              className="interactive-card"
+              className="interactive-card pricing-tier-card"
               style={{
                 background: 'var(--surface-purple)',
                 border: '1px solid var(--border-subtle)',
@@ -328,7 +328,7 @@ export default function PricingPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
               gap: '28px'
             }}
           >

@@ -162,10 +162,8 @@ export default function PrivacyContent() {
 
         {/* 2 Columns Layout: Sticky Sidebar + Content */}
         <div
+          className="grid-12"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '40px',
             alignItems: 'start'
           }}
         >

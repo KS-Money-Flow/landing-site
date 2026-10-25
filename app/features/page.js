@@ -221,7 +221,7 @@ export default function FeaturesPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '24px' }}>
             {/* Left Card: Transfer Not Spending */}
             <div className="interactive-card" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)', borderRadius: '20px', padding: '32px 28px', boxShadow: 'var(--shadow-card)' }}>
               <span style={{ fontSize: '0.72rem', fontWeight: 700, padding: '4px 10px', borderRadius: '6px', background: 'var(--surface-mint)', color: 'var(--primary)' }}>
@@ -350,7 +350,7 @@ export default function FeaturesPage() {
       {/* 04 & 05 (Emotional Spending & Cash Reconciliation Grid) */}
       <section id="spending" style={{ padding: '64px 0', borderTop: '1px solid var(--border-subtle)', background: 'var(--surface-subtle)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '32px' }}>
             {/* 04 Emotional Spending */}
             <div className="interactive-card" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)', borderRadius: '20px', padding: '32px 28px', boxShadow: 'var(--shadow-card)' }}>
               <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--danger)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
@@ -414,7 +414,7 @@ export default function FeaturesPage() {
       {/* 06 & 07 (Goals & Currency) */}
       <section style={{ padding: '64px 0', borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-main)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '32px' }}>
             {/* 06 Percentage Goals */}
             <div className="interactive-card" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)', borderRadius: '20px', padding: '32px 28px', boxShadow: 'var(--shadow-card)' }}>
               <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>

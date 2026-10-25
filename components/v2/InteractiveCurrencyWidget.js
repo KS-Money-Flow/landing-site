@@ -35,7 +35,7 @@ export default function InteractiveCurrencyWidget() {
           </div>
 
           {/* Right Selector & Cards */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', flex: 1, minWidth: '280px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', flex: 1, minWidth: 'min(100%, 280px)' }}>
             {/* Pill Switcher */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {currencies.map((c) => {
