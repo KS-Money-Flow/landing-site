@@ -39,8 +39,8 @@ export default function SecurityPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '48px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+              gap: '40px',
               alignItems: 'center'
             }}
           >
@@ -166,7 +166,7 @@ export default function SecurityPage() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
                 gap: '20px',
                 alignItems: 'center',
                 paddingBottom: '28px',
@@ -193,7 +193,7 @@ export default function SecurityPage() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
                 gap: '20px',
                 alignItems: 'center',
                 paddingTop: '28px'
@@ -234,7 +234,7 @@ export default function SecurityPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', marginBottom: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '36px', marginBottom: '24px' }}>
             {/* Left Column: On your device */}
             <div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '18px' }}>
@@ -286,10 +286,8 @@ export default function SecurityPage() {
       <section style={{ padding: '72px 0', borderTop: '1px solid var(--border-subtle)', background: 'var(--surface-subtle)' }}>
         <div className="container">
           <div
+            className="grid-12"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '40px',
               alignItems: 'center',
               marginBottom: '32px'
             }}
@@ -319,14 +317,16 @@ export default function SecurityPage() {
               background: 'var(--surface)',
               border: '1px solid var(--border-subtle)',
               borderRadius: '16px',
-              padding: '20px 24px',
+              padding: '18px 20px',
               display: 'flex',
               flexWrap: 'wrap',
               alignItems: 'center',
-              gap: '12px',
+              gap: '10px',
               fontSize: '0.82rem',
               color: 'var(--text-primary)',
-              fontWeight: 600
+              fontWeight: 600,
+              overflowX: 'auto',
+              maxWidth: '100%'
             }}
           >
             <span style={{ padding: '6px 14px', borderRadius: '8px', background: 'var(--surface-subtle)' }}>App opens</span>
@@ -336,7 +336,7 @@ export default function SecurityPage() {
             <span style={{ padding: '6px 14px', borderRadius: '8px', background: 'var(--surface-subtle)' }}>Ready</span>
             <span>→</span>
             <span style={{ padding: '6px 14px', borderRadius: '8px', background: 'var(--surface-mint)', color: 'var(--primary)' }}>Dashboard</span>
-            <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', width: '100%', marginTop: '6px' }}>
               If health check says &quot;waking&quot;: Waking status → Retry health check → Ready → Dashboard
             </span>
           </div>
@@ -355,7 +355,7 @@ export default function SecurityPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px' }}>
             {/* Card 1: Local Ledger (Mint) */}
             <div className="interactive-card" style={{ background: 'var(--surface-mint)', border: '1px solid var(--border-subtle)', borderRadius: '20px', padding: '32px 28px' }}>
               <div style={{ color: 'var(--primary)', marginBottom: '14px' }}>
@@ -395,10 +395,8 @@ export default function SecurityPage() {
       <section style={{ padding: '72px 0 20px 0', borderTop: '1px solid var(--border-subtle)', background: 'var(--surface-subtle)' }}>
         <div className="container">
           <div
+            className="grid-12"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '40px',
               alignItems: 'center'
             }}
           >

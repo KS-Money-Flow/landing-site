@@ -800,8 +800,25 @@ a {
   box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(16, 185, 129, 0.25) !important;
 }
 
-/* Page Layout Responsive Grid Column Helpers */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Page Layout Responsive Grid Container & Column Helpers */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
 @media (max-width: 960px) {
+  .grid-12 {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
   .sec-col-6,
   .sec-col-7,
   .sec-col-5,
@@ -812,8 +829,87 @@ a {
   .about-col-4,
   .about-col-8,
   .about-col-7,
-  .about-col-5 {
+  .about-col-5,
+  .bento-col-7,
+  .bento-col-5,
+  .bento-col-4,
+  .bento-col-8,
+  .bento-col-6,
+  .policy-sidebar,
+  .policy-content {
     grid-column: span 12 !important;
+  }
+
+  .policy-sidebar {
+    position: static !important;
+    top: auto !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+/* Principles row on About page */
+.principles-grid {
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: baseline;
+}
+
+.principles-col-num {
+  grid-column: span 1;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: var(--font-mono);
+}
+
+.principles-col-title {
+  grid-column: span 3;
+}
+
+.principles-col-desc {
+  grid-column: span 8;
+}
+
+@media (max-width: 768px) {
+  .principles-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 20px 0 !important;
+  }
+
+  .principles-col-num,
+  .principles-col-title,
+  .principles-col-desc {
+    grid-column: auto !important;
+    width: 100% !important;
+  }
+}
+
+/* Compact padding on small screens (Mobile Viewport Optimization) */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 14px !important;
+  }
+
+  .interactive-card,
+  .pricing-tier-card,
+  .contact-form-card,
+  .card-white,
+  .card-mint,
+  .card-purple,
+  .card-rose,
+  .card-subtle {
+    padding: 24px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .cta-banner {
+    padding: 28px 18px !important;
+    border-radius: 16px !important;
   }
 }
 

@@ -69,8 +69,8 @@ export default function AboutPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '48px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+              gap: '40px',
               alignItems: 'center'
             }}
           >
@@ -158,10 +158,8 @@ export default function AboutPage() {
       <section style={{ padding: '72px 0', borderTop: '1px solid var(--border-subtle)', background: 'var(--surface-subtle)' }}>
         <div className="container">
           <div
+            className="grid-12"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '48px',
               alignItems: 'start'
             }}
           >
@@ -212,7 +210,7 @@ export default function AboutPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
               gap: '24px',
               marginBottom: '20px'
             }}

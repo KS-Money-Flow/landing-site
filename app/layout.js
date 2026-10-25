@@ -82,6 +82,9 @@ export const metadata = {
     ],
     shortcut: '/favicon.ico',
     apple: '/icon.png'
+  },
+  verification: {
+    google: 'google30a834627eedaec9',
   }
 };
 
