@@ -102,13 +102,13 @@ export default function PrivacyContent() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 180;
+      const triggerThreshold = 130;
       let current = sections[0].id;
       for (let i = 0; i < sections.length; i++) {
         const el = document.getElementById(sections[i].id);
         if (el) {
-          const top = el.offsetTop;
-          if (top <= scrollPosition) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= triggerThreshold) {
             current = sections[i].id;
           }
         }
@@ -121,6 +121,20 @@ export default function PrivacyContent() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      const yOffset = -100; // Positions section neatly beneath the 84px fixed navbar
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      setActiveSection(id);
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', `#${id}`);
+      }
+    }
+  };
 
   return (
     <div style={{ padding: '40px 0 80px 0' }}>
@@ -177,14 +191,7 @@ export default function PrivacyContent() {
                     <a
                       key={s.num}
                       href={`#${s.id}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        const el = document.getElementById(s.id);
-                        if (el) {
-                          el.scrollIntoView({ behavior: 'smooth' });
-                          setActiveSection(s.id);
-                        }
-                      }}
+                      onClick={(e) => scrollToSection(e, s.id)}
                       className={`toc-link ${isActive ? 'active' : ''}`}
                     >
                       <span className="toc-num" style={{ fontSize: '0.78rem', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
