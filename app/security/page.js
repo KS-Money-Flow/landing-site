@@ -13,6 +13,9 @@ export const metadata = {
     title: 'Security & Privacy Architecture — Money Flow',
     description: 'No bank credential collection, offline-first local storage, and zero third-party ad tracking. Learn how Money Flow protects your financial data privacy.',
     url: '/security',
+    siteName: 'Money Flow',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/assets/download-hero.png',

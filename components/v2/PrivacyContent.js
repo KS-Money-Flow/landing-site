@@ -161,71 +161,62 @@ export default function PrivacyContent() {
         </div>
 
         {/* 2 Columns Layout: Sticky Sidebar + Content */}
-        <div
-          className="grid-12"
-          style={{
-            alignItems: 'start'
-          }}
-        >
-          {/* Left Column: Table of Contents (4 Cols) */}
-          <div
-            style={{
-              gridColumn: 'span 4',
-              position: 'sticky',
-              top: '110px'
-            }}
-            className="policy-sidebar"
-          >
-            <div style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '16px' }}>
-              On this page
-            </div>
-
-            <nav style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '28px' }}>
-              {sections.map((s) => {
-                const isActive = activeSection === s.id;
-                return (
-                  <a
-                    key={s.num}
-                    href={`#${s.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const el = document.getElementById(s.id);
-                      if (el) {
-                        el.scrollIntoView({ behavior: 'smooth' });
-                        setActiveSection(s.id);
-                      }
-                    }}
-                    className={`toc-link ${isActive ? 'active' : ''}`}
-                  >
-                    <span className="toc-num" style={{ fontSize: '0.78rem', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                      {s.num}
-                    </span>
-                    <span style={{ fontWeight: isActive ? 700 : 500 }}>
-                      {s.title}
-                    </span>
-                  </a>
-                );
-              })}
-            </nav>
-
-            <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '16px' }}>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '6px' }}>
-                Questions about this document?
+        <div className="grid-12">
+          {/* Left Column: Outer Column (Stretches full height) */}
+          <div className="policy-sidebar-col">
+            {/* Sticky Sidebar Container (Pins under header during scroll) */}
+            <div className="policy-sidebar-sticky">
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '16px' }}>
+                On this page
               </div>
-              <Link
-                href="/contact"
-                style={{
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  color: 'var(--primary)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px'
-                }}
-              >
-                <span>Contact Money Flow</span>
-                <ArrowRight size={14} />
-              </Link>
+
+              <nav style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '28px' }}>
+                {sections.map((s) => {
+                  const isActive = activeSection === s.id;
+                  return (
+                    <a
+                      key={s.num}
+                      href={`#${s.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const el = document.getElementById(s.id);
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth' });
+                          setActiveSection(s.id);
+                        }
+                      }}
+                      className={`toc-link ${isActive ? 'active' : ''}`}
+                    >
+                      <span className="toc-num" style={{ fontSize: '0.78rem', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
+                        {s.num}
+                      </span>
+                      <span style={{ fontWeight: isActive ? 700 : 500 }}>
+                        {s.title}
+                      </span>
+                    </a>
+                  );
+                })}
+              </nav>
+
+              <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '16px' }}>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '6px' }}>
+                  Questions about this document?
+                </div>
+                <Link
+                  href="/contact"
+                  style={{
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    color: 'var(--primary)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}
+                >
+                  <span>Contact Money Flow</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
           </div>
 

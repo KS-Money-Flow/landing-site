@@ -10,6 +10,9 @@ export const metadata = {
     title: 'Privacy Policy — Money Flow',
     description: 'Read how Money Flow handles information for personal finance ledgers, spending reflection, and optional connected services.',
     url: '/privacy',
+    siteName: 'Money Flow',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/assets/download-hero.png',

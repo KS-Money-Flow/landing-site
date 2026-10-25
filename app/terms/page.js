@@ -10,6 +10,9 @@ export const metadata = {
     title: 'Terms of Service — Money Flow',
     description: 'Review the terms and conditions for using the Money Flow Community app and planned Pro features. Clear boundaries, user ownership, and service guidelines.',
     url: '/terms',
+    siteName: 'Money Flow',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/assets/download-hero.png',

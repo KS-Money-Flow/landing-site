@@ -23,6 +23,9 @@ export const metadata = {
     title: 'Money Flow — Personal Ledger & Career Wealth Tracker',
     description: 'One clear ledger for every career, every rupee, and the way spending makes you feel. Automated carry-forward, sentiment tagging, and offline privacy.',
     url: siteUrl,
+    siteName: 'Money Flow',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/assets/download-hero.png',

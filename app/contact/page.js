@@ -12,6 +12,9 @@ export const metadata = {
     title: 'Contact & Support — Money Flow',
     description: 'Have a setup question, bug report, or feature request? Contact the Money Flow team. Response within 24-48 hours with privacy-first support.',
     url: '/contact',
+    siteName: 'Money Flow',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/assets/download-hero.png',

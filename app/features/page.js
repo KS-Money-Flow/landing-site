@@ -14,6 +14,9 @@ export const metadata = {
     title: 'Money Flow Features — Career Ledgers, Sentiment & Reconciliation',
     description: 'Automatic career carry-forward, Good vs Bad spending sentiment, cash & pending-bank reconciliation, and multi-format exports (PDF, JSON, Excel).',
     url: '/features',
+    siteName: 'Money Flow',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/assets/download-hero.png',

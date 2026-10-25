@@ -12,6 +12,9 @@ export const metadata = {
     title: 'About Money Flow — Origin Story, Timeline & Principles',
     description: 'The story behind Money Flow: born from messy career transitions and a belief that personal finance tools should provide clarity without judgment or data monetization.',
     url: '/about',
+    siteName: 'Money Flow',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/assets/download-hero.png',
