@@ -19,7 +19,6 @@ yarn-error.log*
 
 # local environment files
 .env*.local
-.env
 
 # vercel
 .vercel
@@ -29,5 +28,5 @@ yarn-error.log*
 Thumbs.db
 
 # IDE configuration
-.vscode/
 .idea/
+config.bat
