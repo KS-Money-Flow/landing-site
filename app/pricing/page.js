@@ -1,181 +1,383 @@
-'use client';
-
 import Link from 'next/link';
-import { Check, Sparkles, Smartphone, ArrowRight, ShieldCheck, Heart, Zap } from 'lucide-react';
+import { Check, ExternalLink, Heart } from 'lucide-react';
+import FinalCtaBanner from '../../components/v2/FinalCtaBanner';
+import PricingWaitlistForm from '../../components/v2/PricingWaitlistForm';
+
+export const metadata = {
+  title: 'Pricing',
+  description: 'The core Money Flow Community ledger is ₹0, free forever: unlimited entries, career carry-forward, and zero ads. Join the waitlist for planned Pro Lifetime cloud extras.',
+  alternates: {
+    canonical: '/pricing',
+  },
+  openGraph: {
+    title: 'Money Flow Pricing — 100% Free Community & Pro Lifetime Waitlist',
+    description: 'The core Money Flow Community ledger is ₹0, free forever: unlimited entries, career carry-forward, and zero ads. Join the waitlist for planned Pro Lifetime cloud extras.',
+    url: 'https://moneyflow.app/pricing',
+    images: [
+      {
+        url: '/assets/download-hero.png',
+        width: 1024,
+        height: 500,
+        alt: 'Money Flow Pricing Plans',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Money Flow Pricing — 100% Free Community & Pro Lifetime Waitlist',
+    description: 'The core Money Flow Community ledger is ₹0, free forever: unlimited entries, career carry-forward, and zero ads.',
+    images: ['/assets/download-hero.png'],
+  },
+};
 
 export default function PricingPage() {
-  return (
-    <div style={{ padding: '40px 0 80px 0' }}>
-      <div className="container">
-        
-        {/* Page Header */}
-        <div className="section-header" style={{ marginBottom: '64px' }}>
-          <span className="section-tag">Zero Hidden Fees</span>
-          <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.5rem)', marginBottom: '16px' }}>
-            Transparent &amp; Free Forever
-          </h1>
-          <p>
-            Money Flow was created to empower individual financial autonomy. No ads, no data harvesting, and no subscription paywalls for your personal wealth data.
-          </p>
-        </div>
+  const tableRows = [
+    { feature: 'Core personal ledgers', community: 'Included', pro: 'Included' },
+    { feature: 'Transactions & categories', community: 'Unlimited', pro: 'Unlimited' },
+    { feature: 'Good / Bad sentiment tags', community: 'Included', pro: 'Included' },
+    { feature: 'Career carry-forward', community: 'Included', pro: 'Included' },
+    { feature: 'Cash & bank reconciliation', community: 'Included', pro: 'Included' },
+    { feature: 'PDF, JSON & Excel export', community: 'Included', pro: 'Included' },
+    { feature: 'Ads & third-party trackers', community: 'None', pro: 'None' },
+    { feature: 'Multi-device cloud sync', community: 'Not included', pro: 'Planned', proHighlight: true },
+    { feature: 'Automated cloud backups', community: 'Not included', pro: 'Planned', proHighlight: true },
+    { feature: 'Household sharing', community: 'Not included', pro: 'Planned', proHighlight: true },
+    { feature: 'Availability', community: 'Google Play Store', pro: 'Planned · not purchasable' },
+  ];
 
-        {/* Pricing Cards Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '32px',
-            maxWidth: '960px',
-            margin: '0 auto 64px auto'
-          }}
-        >
-          
-          {/* Card 1: Community Edition (Highlight) */}
+  return (
+    <div style={{ padding: '32px 0 24px 0' }}>
+      {/* 1. Header */}
+      <section style={{ marginBottom: '56px' }}>
+        <div className="container">
+          <div style={{ maxWidth: '680px' }}>
+            <span className="section-tag neutral" style={{ background: 'var(--surface-mint)', color: 'var(--primary)', marginBottom: '16px' }}>
+              Simple by intention
+            </span>
+            <h1
+              style={{
+                fontSize: 'clamp(2.4rem, 5vw, 3.5rem)',
+                fontWeight: 800,
+                color: 'var(--text-primary)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.03em',
+                marginBottom: '18px'
+              }}
+            >
+              Start free. Keep your money yours.
+            </h1>
+            <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+              A complete personal ledger shouldn’t come with ads or pressure. Community covers the essentials; a planned Pro lifetime option will add connected conveniences.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Tier Cards */}
+      <section style={{ marginBottom: '88px' }}>
+        <div className="container">
           <div
-            className="glass-panel"
             style={{
-              padding: '40px 32px',
-              border: '2px solid var(--primary)',
-              boxShadow: 'var(--shadow-card), var(--shadow-glow)',
-              position: 'relative',
-              background: 'var(--surface-glass)'
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '32px',
+              alignItems: 'stretch',
+              marginBottom: '20px'
+            }}
+          >
+            {/* Tier 1: Community */}
+            <div
+              className="interactive-card"
+              style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '20px',
+                padding: '40px 36px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: 'var(--shadow-card)'
+              }}
+            >
+              <div>
+                <span style={{ fontSize: '0.72rem', fontWeight: 700, padding: '4px 12px', borderRadius: '9999px', background: 'var(--surface-mint)', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  Available now
+                </span>
+
+                <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', marginTop: '16px', marginBottom: '8px' }}>
+                  Community
+                </h2>
+
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>₹0</span>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>free forever</span>
+                </div>
+
+                <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '28px' }}>
+                  Everything you need for your own financial story.
+                </p>
+
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.krishna.moneyflow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  style={{ width: '100%', padding: '14px', marginBottom: '32px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}
+                >
+                  <span>Get on Google Play</span>
+                  <ExternalLink size={18} />
+                </a>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
+                  {[
+                    'Core personal and career ledgers',
+                    'Unlimited transactions and categories',
+                    'Good / Bad spending sentiment',
+                    'Automatic career carry-forward',
+                    'Cash & pending-bank reconciliation',
+                    'PDF statements, JSON and Excel export',
+                    'No ads. No third-party trackers.'
+                  ].map((item, idx) => (
+                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <Check size={16} color="var(--primary)" strokeWidth={2.5} style={{ flexShrink: 0 }} />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Tier 2: Pro Lifetime (Lavender) */}
+            <div
+              className="interactive-card"
+              style={{
+                background: 'var(--surface-purple)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '20px',
+                padding: '40px 36px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
+            >
+              <div>
+                <span style={{ fontSize: '0.72rem', fontWeight: 700, padding: '4px 12px', borderRadius: '9999px', background: 'var(--surface)', color: 'var(--investment)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  Planned · Join the waitlist
+                </span>
+
+                <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', marginTop: '16px', marginBottom: '8px' }}>
+                  Pro Lifetime
+                </h2>
+
+                <div style={{ marginBottom: '12px' }}>
+                  <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+                    Price to be announced
+                  </div>
+                </div>
+
+                <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '28px' }}>
+                  A planned one-time license. No price or purchase date has been confirmed.
+                </p>
+
+                <PricingWaitlistForm />
+
+                <div style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--investment)', marginBottom: '14px' }}>
+                  Community, plus planned extras
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem', color: 'var(--text-primary)', marginBottom: '28px' }}>
+                  {[
+                    'Multi-device cloud sync · planned',
+                    'Automated backups · planned',
+                    'Household sharing · planned'
+                  ].map((item, idx) => (
+                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <Check size={16} color="var(--investment)" strokeWidth={2.5} style={{ flexShrink: 0 }} />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.5, borderTop: '1px solid var(--border-subtle)', paddingTop: '16px' }}>
+                Joining the waitlist is not a purchase. Final features, pricing and service terms will be shared before launch.
+              </div>
+            </div>
+          </div>
+
+          <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+            There is no subscription toggle. Pro is a planned lifetime model, not the older monthly cloud plan.
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Comparison Table */}
+      <section style={{ marginBottom: '88px' }}>
+        <div className="container">
+          <div style={{ marginBottom: '36px' }}>
+            <span className="section-tag neutral" style={{ background: 'var(--surface-mint)', color: 'var(--primary)', marginBottom: '14px' }}>
+              The complete picture
+            </span>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '12px' }}>
+              Essentials are not an upsell.
+            </h2>
+            <p style={{ maxWidth: '680px', fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
+              Keep your daily ledger useful without paying. Planned cloud extras are clearly separated from what you can use today.
+            </p>
+          </div>
+
+          <div
+            style={{
+              background: 'var(--surface)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-card)'
+            }}
+          >
+            <div className="table-responsive">
+              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '600px' }}>
+                <thead>
+                  <tr style={{ borderBottom: '1px solid var(--border-subtle)', background: 'var(--surface-elevated)' }}>
+                    <th style={{ padding: '20px 24px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)', width: '40%' }}>
+                      Feature / Capability
+                    </th>
+                    <th style={{ padding: '20px 24px', fontSize: '0.95rem', fontWeight: 800, color: 'var(--primary)', width: '30%' }}>
+                      Community
+                    </th>
+                    <th style={{ padding: '20px 24px', fontSize: '0.95rem', fontWeight: 800, color: 'var(--investment)', width: '30%' }}>
+                      Pro Lifetime
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableRows.map((r, idx) => (
+                    <tr key={idx} style={{ borderBottom: idx < tableRows.length - 1 ? '1px solid var(--border-light)' : 'none' }}>
+                      <td style={{ padding: '16px 24px', fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.92rem' }}>
+                        {r.feature}
+                      </td>
+                      <td style={{ padding: '16px 24px', color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem' }}>
+                        {r.community}
+                      </td>
+                      <td style={{ padding: '16px 24px', color: r.proHighlight ? 'var(--investment)' : 'var(--text-secondary)', fontWeight: r.proHighlight ? 700 : 500, fontSize: '0.9rem' }}>
+                        {r.pro}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. You Are Not The Business Model */}
+      <section style={{ marginBottom: '88px' }}>
+        <div className="container">
+          <div
+            style={{
+              background: 'var(--surface-subtle)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '20px',
+              padding: '36px 40px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '28px'
             }}
           >
             <div
               style={{
-                position: 'absolute',
-                top: '-14px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                background: 'linear-gradient(135deg, #10B981, #059669)',
-                color: '#FFFFFF',
-                padding: '4px 16px',
-                borderRadius: '9999px',
-                fontSize: '0.78rem',
-                fontWeight: 800,
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase'
+                width: '56px',
+                height: '56px',
+                borderRadius: '50%',
+                background: 'var(--surface-mint)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--primary)',
+                flexShrink: 0,
+                border: '1px solid var(--border-subtle)'
               }}
             >
-              Most Popular • 100% Free
+              <Heart size={26} />
             </div>
-
-            <div style={{ marginBottom: '24px' }}>
-              <h2 style={{ fontSize: '1.6rem', marginBottom: '8px', color: 'var(--text-primary)' }}>Community Edition</h2>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                The complete personal wealth manager with zero artificial limits.
+            <div>
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '6px' }}>
+                You are not the business model.
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                Money Flow does not sell your financial data or build an ad audience from your habits. The free ledger stays ad-free. Planned paid conveniences should add value—not create pressure.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '32px' }}>
-              <span style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-primary)' }}>₹0</span>
-              <span style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>/ lifetime</span>
-            </div>
-
-            {/* Checklist */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
-              {[
-                'Unlimited transactions & categories',
-                'Multi-company career transition ledgers',
-                'Automatic carry-forward balance engine',
-                '"Good vs Bad" emotional spending sentiment tags',
-                'Percentage-based income targeting (Notes 1%)',
-                'Dual Cash & Pending bank reconciliations',
-                'Cloud backend & cold-start wake-up shield',
-                'Zero advertisements or user tracking',
-                'Full mobile access on Android devices'
-              ].map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.2)', color: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Check size={14} />
-                  </div>
-                  <span style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <Link href="/download" className="btn btn-primary" style={{ width: '100%', padding: '14px' }}>
-              <Smartphone size={18} />
-              <span>Get Started Free (v2.4)</span>
-            </Link>
+      {/* 5. Good Questions (FAQ Grid 2x2) */}
+      <section style={{ marginBottom: '36px' }}>
+        <div className="container">
+          <div style={{ marginBottom: '28px' }}>
+            <span className="section-tag neutral" style={{ background: 'var(--surface-mint)', color: 'var(--primary)', marginBottom: '12px' }}>
+              Good questions
+            </span>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, color: 'var(--text-primary)' }}>
+              No fine-print surprises.
+            </h2>
           </div>
 
-          {/* Card 2: Cloud Sync Pro (Roadmap / Enterprise) */}
           <div
-            className="glass-panel"
             style={{
-              padding: '40px 32px',
-              background: 'var(--surface-glass)',
-              border: '1px solid var(--border-subtle)',
-              boxShadow: 'var(--shadow-card)'
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '28px'
             }}
           >
-            <div style={{ marginBottom: '24px' }}>
-              <div className="badge badge-purple" style={{ marginBottom: '12px' }}>
-                Coming in v3.0
-              </div>
-              <h2 style={{ fontSize: '1.6rem', marginBottom: '8px', color: 'var(--text-primary)' }}>Cloud Sync Pro</h2>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                For power users who need automated multi-device cloud replication and team accountant exports.
+            <div>
+              <h4 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '10px' }}>
+                Will Community stay free?
+              </h4>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                The core Community ledger is ₹0, free forever: personal ledgers, unlimited entries and categories, sentiment, carry-forward and reconciliation. No ads are included.
               </p>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '32px' }}>
-              <span style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-primary)' }}>₹199</span>
-              <span style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>/ month (optional)</span>
+            <div>
+              <h4 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '10px' }}>
+                Can I buy Pro Lifetime today?
+              </h4>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                Not yet. The price is unannounced, and the extras are planned. Join the waitlist to hear about availability; no payment is taken.
+              </p>
             </div>
 
-            {/* Checklist */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
-              {[
-                'Everything in Community Free Edition',
-                'Instant multi-device real-time sync (iOS + Android)',
-                'Automated encrypted daily cloud backups',
-                'One-click PDF & Excel tax reports for CAs',
-                'Priority dedicated cloud infrastructure (instant response)',
-                'Family & shared household ledger sharing'
-              ].map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'rgba(139, 92, 246, 0.2)', color: '#8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Check size={14} />
-                  </div>
-                  <span style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>{item}</span>
-                </div>
-              ))}
+            <div>
+              <h4 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '10px' }}>
+                Do I need Pro to use the app offline?
+              </h4>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                No. Your local ledger works offline in Community. Cloud-dependent services require a connection and should not be confused with local access.
+              </p>
             </div>
 
-            <Link href="/contact" className="btn btn-outline" style={{ width: '100%', padding: '14px' }}>
-              <span>Join Cloud Pro Waitlist</span>
-            </Link>
-          </div>
-
-        </div>
-
-        {/* Ethical Pledge */}
-        <div
-          className="glass-card"
-          style={{
-            maxWidth: '820px',
-            margin: '0 auto',
-            padding: '36px 32px',
-            textAlign: 'center',
-            background: 'var(--surface-elevated)',
-            border: '1px solid var(--border-subtle)',
-            boxShadow: 'var(--shadow-card)'
-          }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-            <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(244, 63, 94, 0.15)', color: 'var(--danger)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Heart size={22} />
+            <div>
+              <h4 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '10px' }}>
+                Does “lifetime” mean perpetual hosting?
+              </h4>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                No. A lifetime license and ongoing cloud hosting are different commitments. Final license scope, service availability and limits will be stated before any purchase.
+              </p>
             </div>
           </div>
-          <h3 style={{ fontSize: '1.35rem', marginBottom: '10px', color: 'var(--text-primary)' }}>The Money Flow Anti-Monetization Pledge</h3>
-          <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '680px', margin: '0 auto' }}>
-            Most modern finance apps make money by selling your financial profiles to loan companies or filling your screen with credit offers. Money Flow will never display advertisements, sell financial leads, or lock your historical financial records behind a paywall.
-          </p>
         </div>
+      </section>
 
-      </div>
+      {/* 6. Final Banner */}
+      <FinalCtaBanner
+        title="Start with clarity. For ₹0."
+        subtitle="Start with the free Community app on Google Play. Your next chapter starts with one entry."
+        buttonText="Get on Google Play"
+        href="https://play.google.com/store/apps/details?id=com.krishna.moneyflow"
+      />
     </div>
   );
 }

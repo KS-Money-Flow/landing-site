@@ -1,67 +1,67 @@
 'use client';
 
 import Link from 'next/link';
-import { ShieldCheck, Heart, Terminal, Sparkles, Smartphone, ArrowUpRight, Github, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer
       style={{
-        background: 'linear-gradient(180deg, var(--bg-main) 0%, var(--bg-secondary) 100%)',
-        borderTop: '1px solid var(--border-subtle)',
-        paddingTop: '80px',
-        paddingBottom: '40px',
-        marginTop: '100px',
-        position: 'relative'
+        background: 'var(--surface, #FFFFFF)',
+        borderTop: '1px solid var(--border-subtle, #DFE8E2)',
+        paddingTop: '48px',
+        paddingBottom: '32px',
       }}
     >
-      {/* Decorative Glow */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '600px',
-          height: '2px',
-          background: 'linear-gradient(90deg, transparent, #10B981, #8B5CF6, transparent)'
-        }}
-      />
-
       <div className="container">
+        {/* 4 Columns */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '48px',
-            marginBottom: '64px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '36px',
+            marginBottom: '40px'
           }}
         >
-          {/* Col 1: Brand */}
-          <div style={{ maxWidth: '340px' }}>
+          {/* Brand Column */}
+          <div style={{ maxWidth: '320px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <div
                 style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #10B981, #8B5CF6)',
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontWeight: 800,
-                  fontSize: '18px',
-                  color: '#FFFFFF'
+                  border: '1.5px solid rgba(8, 127, 91, 0.15)',
+                  boxShadow: '0 4px 14px rgba(8, 127, 91, 0.2)',
+                  background: 'var(--surface)',
+                  flexShrink: 0
                 }}
               >
-                ₹
+                <img
+                  src="/logo.png"
+                  alt="Money Flow Logo"
+                  width={44}
+                  height={44}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
+                />
               </div>
-              <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+              <span style={{ fontSize: '1.34rem', fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text-primary, #142C25)' }}>
                 Money Flow
               </span>
             </div>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-              The high-performance wealth tracking platform designed to automate career transition ledgers, sentiment-based spend quality analysis, and physical cash reconciliations.
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary, #60736B)', lineHeight: 1.6, marginBottom: '6px' }}>
+              Your money. Every chapter.
+            </p>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary, #60736B)', lineHeight: 1.6, marginBottom: '18px' }}>
+              A personal ledger for a life that moves.
             </p>
             <div
               style={{
@@ -70,136 +70,122 @@ export default function Footer() {
                 gap: '8px',
                 padding: '6px 14px',
                 borderRadius: '9999px',
-                background: 'rgba(16, 185, 129, 0.1)',
-                border: '1px solid rgba(16, 185, 129, 0.25)',
+                background: 'var(--surface-mint, #EAF8F1)',
                 fontSize: '0.78rem',
-                color: 'var(--primary)'
+                fontWeight: 600,
+                color: 'var(--primary, #087F5B)'
               }}
             >
-              <span className="pulse-dot" />
-              <span>Cloud Services: All Systems Operational</span>
+              <span>V3 experience · Android v2.4</span>
             </div>
           </div>
 
-          {/* Col 2: Product & App */}
+          {/* Product Column */}
           <div>
-            <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '18px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <h4 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted, #84948D)', marginBottom: '16px' }}>
               Product
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li>
-                <Link href="/features" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Interactive Features
+                <Link href="/" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/download" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                  <span>Mobile App Access</span>
-                  <span className="badge badge-emerald" style={{ fontSize: '0.65rem' }}>v2.4</span>
+                <Link href="/features" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  Features
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Transparent Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/#calculator" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Bad Spend Wealth Simulator
-                </Link>
-              </li>
-              <li>
-                <Link href="/#interactive-demo" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Live Interactive Demo
+                <Link href="/download" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  Download
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Architecture & Security */}
+          {/* Explore Column */}
           <div>
-            <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '18px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Trust &amp; Architecture
+            <h4 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted, #84948D)', marginBottom: '16px' }}>
+              Explore
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li>
-                <Link href="/security" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Security &amp; Data Isolation
+                <Link href="/pricing" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/about" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Our Mission &amp; Philosophy
+                <Link href="/security" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  Security
                 </Link>
               </li>
               <li>
-                <Link href="/security#render-cold-start" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Cloud Cold-Start Shield
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Developer &amp; Support Contact
+                <Link href="/about" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  About
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Legal & Community */}
+          {/* Support & Legal Column */}
           <div>
-            <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '18px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Compliance &amp; Legal
+            <h4 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted, #84948D)', marginBottom: '16px' }}>
+              Support &amp; Legal
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li>
-                <Link href="/privacy" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Privacy Policy
+                <Link href="/contact" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link href="/terms" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Terms of Service
+                <Link href="/privacy" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  Privacy
                 </Link>
               </li>
               <li>
-                <Link href="/contact" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                  Help &amp; Inquiries
+                <Link href="/terms" className="footer-nav-link" style={{ color: 'var(--text-primary, #142C25)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  Terms
                 </Link>
               </li>
             </ul>
-            <div style={{ marginTop: '20px' }}>
-              <Link href="/download" className="btn btn-secondary" style={{ width: '100%', fontSize: '0.85rem', padding: '10px' }}>
-                <Smartphone size={15} />
-                <span>Get Mobile Access</span>
-              </Link>
-            </div>
           </div>
         </div>
 
-        {/* Bottom Strip */}
+        {/* Bottom Bar */}
         <div
           style={{
-            paddingTop: '32px',
             borderTop: '1px solid var(--border-subtle)',
+            paddingTop: '24px',
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '16px',
-            fontSize: '0.85rem',
+            fontSize: '0.82rem',
             color: 'var(--text-muted)'
           }}
         >
           <div>
-            © {new Date().getFullYear()} Money Flow. Engineered for Financial Autonomy &amp; Complete Data Privacy.
+            © 2026 Money Flow. Built with intention.
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-            <span>Zero Tracking • Multi-Tenant Isolated</span>
-            <Link href="/privacy" style={{ color: 'var(--text-secondary)' }}>Privacy</Link>
-            <Link href="/terms" style={{ color: 'var(--text-secondary)' }}>Terms</Link>
+          <div>
+            No ads. No data selling. Just clarity.
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        :global(.footer-nav-link) {
+          transition: all 0.2s ease;
+          display: inline-block;
+        }
+        :global(.footer-nav-link:hover) {
+          color: var(--primary, #087F5B) !important;
+          transform: translateX(4px);
+        }
+      `}</style>
     </footer>
   );
 }
